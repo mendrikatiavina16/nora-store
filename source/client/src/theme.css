@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+@import "tailwindcss-safe-area";
+
+@theme {
+  --text-xs: 12px;
+  --text-xs--line-height: 16px;
+  --text-sm: 14px;
+  --text-sm--line-height: 20px;
+  --text-base: 16px;
+  --text-base--line-height: 24px;
+  --text-lg: 18px;
+  --text-lg--line-height: 28px;
+  --text-xl: 20px;
+  --text-xl--line-height: 28px;
+  --text-2xl: 24px;
+  --text-2xl--line-height: 32px;
+  --text-3xl: 30px;
+  --text-3xl--line-height: 36px;
+  --text-4xl: 36px;
+  --text-4xl--line-height: 40px;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+  /* Nora Essentials — Kinetic Pulse (export Stitch) */
+  --bg: #f4f2fb;
+  --surface: #ffffff;
+  --text: #12141a;
+  --dim: #636779;
+  --border: #e7e4f2;
+  --accent: #0b5136;
+  --accent-2: #5b36de;
+  /* Halos du fond de page — suivent le thème de l'article sélectionné
+     (définis ici avec les valeurs du thème par défaut, surchargés en
+     ligne par l'application selon l'article affiché). */
+  --glow-1: rgba(91, 54, 222, 0.10);
+  --glow-2: rgba(11, 81, 54, 0.12);
+  --orange: #ff6b00;
+  --mint: #d9f5e3;
+  --ink: #12141a;
+  --radius: 16px;
+  --space-surface: var(--surface);
+  --space-surface-alt: #f3f3fc;
+  --space-muted: var(--dim);
+  --space-border: var(--border);
+  --space-accent: var(--accent);
+}
+
+body {
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(120% 60% at 85% -5%, var(--glow-1), transparent 60%),
+    radial-gradient(120% 55% at -10% 0%, var(--glow-2), transparent 55%),
+    var(--bg);
+  color: var(--text);
+  transition: background-color 0.5s ease;
+}
+
+/* Phone tap targets: at least 32px tall. */
+@layer base {
+  button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) {
+    min-height: 2rem;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
